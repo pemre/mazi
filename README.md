@@ -1,6 +1,7 @@
 # Mazi
 
 ![](https://img.shields.io/github/license/pemre/mazi?style=flat-square)
+![](https://img.shields.io/github/languages/code-size/pemre/mazi?style=flat-square)
 ![](https://img.shields.io/badge/awesome%3F-yes-green.svg?style=flat-square)
 
 Emre's various scripts bygone...
