@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html class=" mediaqueries" lang="tr">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="">
+
+    <title>Logo Soho | Fatura</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Sans+Pro:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+
+<body class="leftbar-collapsed">
+<div class="wrapper">
+
+    <div class="leftbar">
+        <ul class="leftbar-nav">
+            <li class="logo">
+                <a href="index.html">
+                    <i class="icon-logo"></i> <span>LOGO<strong>SOHO</strong></span>
+                </a>
+            </li>
+            <li class="search">
+                <div>
+                    <i class="icon-search"></i><input class="form-control" placeholder="LogoSoho'yu ara" type="text">
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-companies"></i> <span>Firmalar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-products"></i> <span>Ürünler</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-sales"></i> <span>Satışlarım</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-collections"></i> <span>Tahsilatlarım</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-expense"></i> <span>Giderlerim</span>
+                </a>
+            </li>
+            <li class="active has-notification">
+                <a href="#">
+                    <i class="icon-payments"></i> <span>Ödemelerim</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-accounts"></i> <span>Hesaplar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-reports"></i> <span>Raporlar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-management"></i> <span>Yönetim</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="leftbar-footer">
+            <div class="leftbar-toggle">
+                <a href="#"><span>küçült</span> <i class="fa fa-angle-double-left"></i></a>
+            </div>
+
+            <div class="logged-card">
+                <div class="tools">
+                    <a class="notification has-notification" href="#">
+                        <i class="fa fa-bell-o"></i>
+                    </a>
+                    <a class="settings" href="#">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </div>
+                <div class="user">
+                    <a href="#" class="user-img" style="background-image: url('img/avatar-44x44.png')"></a>
+                    <span class="user-fullname">Eylül Güler</span>
+                    <span class="user-title">UX Designer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="funcbar">
+        <ul class="funcbar-list">
+            <li>
+                <a href="#">
+                    <i class="fa fa-refresh"></i>
+                    <span>İADESİNİ <br>OLUŞTUR</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-files-o"></i>
+                    <span>FATURAYI <br>KOPYALA</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-sticky-note-o"></i>
+                    <span>E-ARŞİV‘E <br>GÖNDER</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-edit"></i>
+                    <span>FATURAYI <br>DÜZENLE</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-print"></i>
+                    <span>YAZDIR</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-envelope"></i>
+                    <span>E-POSTA <br>GÖNDER</span>
+                </a>
+            </li>
+        </ul>
+        <div class="funcbar-action-right">
+            <!--        <div class="toggle btn btn-success" data-toggle="toggle" style="width: 136px; height: 34px;"><input data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-on="Kullanımda" data-off="Kullanım dışı" checked="checked" id="chkStatus" type="checkbox"><div class="toggle-group"><label class="btn btn-success toggle-on">Kullanımda</label><label class="btn btn-danger active toggle-off">Kullanım dışı</label><span class="toggle-handle btn btn-default"></span></div></div>
+                    <span>KULLANIM DURUMU</span>-->
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="page-heading">
+            <div class="back-button">
+                <a href="#">
+                    <i class="fa fa-angle-left"></i>
+                    <span>Fatura Listesi</span>
+                </a>
+            </div>
+            <div class="heading-content">
+                <div class="title">
+                    Fatura detayı
+                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">Faturalarım</a></li>
+                    <li class="active">Fatura detayı</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="invoice-wrapper">
+            <div class="invoice-info">
+                <div class="invoice-address">
+                    <div class="address-title">FATURA ADRESİ</div>
+                    <div class="xform">
+                        <div class="xform-group company-name">
+                            <label><span>Ünvan</span> <i></i></label>
+                            <input class="form-control ui-autocomplete-input" placeholder="Ünvan" id="txtCompanyName"
+                                   autocomplete="off" type="text">
+                        </div>
+                        <div class="xform-group">
+                            <label><span>Adres</span> <i></i></label>
+                            <textarea class="form-control" placeholder="Adres" id="txtAddress"></textarea>
+                        </div>
+                        <div class="xform-group">
+                            <label><span>Ülke</span> <i></i></label>
+                            <select selectize="" placeholder="Ülke" tabindex="-1" style="display: none;"
+                                    class="selectized">
+                                <option value="" selected="selected"></option>
+                            </select>
+                            <div class="selectize-control single">
+                                <div class="selectize-input items not-full has-options">
+                                    <input autocomplete="off" tabindex="" placeholder="Ülke" type="text"></div>
+                                <div class="selectize-dropdown single"
+                                     style="display: none; width: 420px; top: 27px; left: 0px;">
+                                    <div class="selectize-dropdown-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="xform-group">
+                                    <label><span>İl</span> <i></i></label>
+                                    <select selectize="" placeholder="İl" tabindex="-1" style="display: none;"
+                                            class="selectized">
+                                        <option value="" selected="selected"></option>
+                                    </select>
+                                    <div class="selectize-control single">
+                                        <div class="selectize-input items not-full has-options" style=""><input
+                                                autocomplete="off" tabindex="" placeholder="İl" type="text"></div>
+                                        <div class="selectize-dropdown single"
+                                             style="display: none; width: 209px; top: 27px; left: 0px;">
+                                            <div class="selectize-dropdown-content"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="xform-group">
+                                    <label><span>İlçe</span> <i></i></label>
+                                    <select selectize="" placeholder="İlçe" tabindex="-1" style="display: none;"
+                                            class="selectized">
+                                        <option value="" selected="selected"></option>
+                                    </select>
+                                    <div class="selectize-control single">
+                                        <div class="selectize-input items not-full has-options" style=""><input
+                                                autocomplete="off" tabindex="" placeholder="İlçe" type="text"></div>
+                                        <div class="selectize-dropdown single"
+                                             style="display: none; width: 209px; top: 27px; left: 0px;">
+                                            <div class="selectize-dropdown-content"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="xform-group xform-group-horizontal">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label class="xform-group-label"><span>Vergi No / TC Kimlik No:</span>
+                                        <i></i></label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input class="form-control" placeholder="örn:456435223433" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xform-group xform-group-horizontal">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label class="xform-group-label"><span>Vergi Dairesi:</span> <i></i></label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <input class="form-control" placeholder="örn:456435223433" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkbox checkbox-primary da-checkbox">
+                            <input id="chkDeliveryAddress" checked="checked" type="checkbox">
+                            <label for="chkDeliveryAddress">
+                                teslimat adresi farklı
+                            </label>
+                        </div>
+
+                        <div id="dvDeliveryAddress">
+                            <div class="address-title">TESLİMAT ADRESİ</div>
+                            <div class="xform da-xform">
+                                <div class="xform-group">
+                                    <input class="form-control" placeholder="Adres Başlığı" type="text">
+                                </div>
+                                <div class="xform-group">
+                                    <textarea class="form-control" placeholder="Adres"
+                                              address-group="delivery"></textarea>
+                                </div>
+                                <div class="xform-group">
+                                    <select selectize="" placeholder="Ülke" tabindex="-1" style="display: none;"
+                                            class="selectized">
+                                        <option value="" selected="selected"></option>
+                                    </select>
+                                    <div class="selectize-control single">
+                                        <div class="selectize-input items not-full has-options" style=""><input
+                                                autocomplete="off" tabindex="" placeholder="Ülke" style="width: 31px;"
+                                                type="text"></div>
+                                        <div class="selectize-dropdown single"
+                                             style="display: none; width: 295px; top: 27px; left: 0px;">
+                                            <div class="selectize-dropdown-content"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <select selectize="" placeholder="İl" tabindex="-1" style="display: none;"
+                                                    class="selectized">
+                                                <option value="" selected="selected"></option>
+                                            </select>
+                                            <div class="selectize-control single">
+                                                <div class="selectize-input items not-full has-options" style=""><input
+                                                        autocomplete="off" tabindex="" placeholder="İl"
+                                                        style="width: 12px;" type="text"></div>
+                                                <div class="selectize-dropdown single"
+                                                     style="display: none; width: 147px; top: 27px; left: 0px;">
+                                                    <div class="selectize-dropdown-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <select selectize="" placeholder="İlçe" tabindex="-1" style="display: none;"
+                                                    class="selectized">
+                                                <option value="" selected="selected"></option>
+                                            </select>
+                                            <div class="selectize-control single">
+                                                <div class="selectize-input items not-full has-options" style=""><input
+                                                        autocomplete="off" tabindex="" placeholder="İlçe"
+                                                        style="width: 25px;" type="text"></div>
+                                                <div class="selectize-dropdown single"
+                                                     style="display: none; width: 147px; top: 27px; left: 0px;">
+                                                    <div class="selectize-dropdown-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="invoice-regulation">
+                    <div class="invoice-logo">
+                        <img src="img/logo.png">
+                    </div>
+
+                    <div class="clearfix">
+                        <ul class="ir-company-info">
+                            <li><strong>Logo Yazılım</strong></li>
+                            <li>Şahabettin Bilgisu Cad. No: 609</li>
+                            <li>Gebze Organize Sanayi Bölgesi, 41480</li>
+                            <li>Tel: 0212 234 65 89</li>
+                            <li>Fax: 0212 234 65 89</li>
+                        </ul>
+                    </div>
+
+                    <div class="invoice-detail">
+
+                        <div class="xform id-xform">
+                            <div class="xform-group xform-group-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="xform-group-label"><span>Fatura Tarihi:</span></label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <label><span>22/07/2016</span></label>
+                                            <input class="form-control" placeholder="22/07/2016" datetimepicker=""
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xform-group xform-group-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="xform-group-label"><span>Ödeme Tarihi:</span></label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <label><span>22/08/2016</span></label>
+                                            <input class="form-control" placeholder="22/08/2016" datetimepicker=""
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xform-group xform-group-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="xform-group-label"><span>Fatura No:</span></label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <label><span>415645</span></label>
+                                            <input class="form-control" placeholder="415645" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xform-group xform-group-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="xform-group-label"><span>Kategori:</span></label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <label><span>Kategori</span></label>
+                                            <select selectize="" placeholder="Kategori" tabindex="-1"
+                                                    style="display: none;" class="selectized">
+                                                <option value="" selected="selected"></option>
+                                            </select>
+                                            <div class="selectize-control single">
+                                                <div class="selectize-input items not-full has-options" style=""><input
+                                                        autocomplete="off" tabindex="" placeholder="Kategori"
+                                                        style="width: 54px;" type="text"></div>
+                                                <div class="selectize-dropdown single"
+                                                     style="display: none; width: 114px; top: 27px; left: 0px;">
+                                                    <div class="selectize-dropdown-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xform-group xform-group-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="xform-group-label"><span>Döviz:</span></label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <label><span>Döviz</span></label>
+                                            <select selectize="" placeholder="Döviz" tabindex="-1"
+                                                    style="display: none;" class="selectized">
+                                                <option value="" selected="selected"></option>
+                                            </select>
+                                            <div class="selectize-control single">
+                                                <div class="selectize-input items not-full has-options" style=""><input
+                                                        autocomplete="off" tabindex="" placeholder="Döviz"
+                                                        style="width: 37px;" type="text"></div>
+                                                <div class="selectize-dropdown single"
+                                                     style="display: none; width: 114px; top: 27px; left: 0px;">
+                                                    <div class="selectize-dropdown-content"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xform-group xform-group-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class="xform-group-label"><span>Kur(USD-TRY):</span></label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="xform-group">
+                                            <label><span>3.15</span></label>
+                                            <input class="form-control" placeholder="3.15" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="invoice-table">
+
+                <div class="xtable">
+                    <div class="xt-thead xt-tr">
+                        <div class="xt-th">HİZMET/ÜRÜN</div>
+                        <div class="xt-th text-center" style="width: 100px;">MİKTAR</div>
+                        <div class="xt-th text-center" style="width: 120px;">
+                            BİRİM FİYAT
+                            <div class="vat-checkbox">
+                                <div class="checkbox checkbox-primary da-checkbox">
+                                    <input id="chkVat" checked="checked" type="checkbox">
+                                    <label for="chkVat">
+                                        KDV dahil
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xt-th text-center" style="width: 100px;">VERGİ</div>
+                        <div class="xt-th text-center" style="width: 90px;">İNDİRİM</div>
+                        <div class="xt-th text-center" style="width: 100px;">TOPLAM</div>
+                    </div>
+                    <div class="xt-tbody xt-tr">
+                        <div class="xt-td">
+                            <div class="xt-row-buttons">
+                                <a class="aRowActionDrop" href="#"><i class="fa fa-minus"></i></a>
+                                <a class="aRowActionAdd" href="#"><i class="fa fa-plus"></i></a>
+                            </div>
+
+                            <input placeholder="ürün/hizmet" value="LOGO CRM" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" value="30000" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" value="18%" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" value="60000" type="text">
+                        </div>
+                    </div>
+                    <div class="xt-tbody xt-tr">
+                        <div class="xt-td">
+                            <div class="xt-row-buttons">
+                                <a class="aRowActionDrop" href="#"><i class="fa fa-minus"></i></a>
+                                <a class="aRowActionAdd" href="#"><i class="fa fa-plus"></i></a>
+                            </div>
+
+                            <input placeholder="ürün/hizmet" value="LOGO CRM" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" value="30000" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" value="18%" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" value="60000" type="text">
+                        </div>
+                    </div>
+                    <div class="xt-tbody xt-tr">
+                        <div class="xt-td">
+                            <div class="xt-row-buttons">
+                                <a class="aRowActionDrop" href="#"><i class="fa fa-minus"></i></a>
+                                <a class="aRowActionAdd" href="#"><i class="fa fa-plus"></i></a>
+                            </div>
+
+                            <input placeholder="ürün/hizmet" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                    </div>
+
+                    <div id="dvTableRowTemplate" class="xt-tbody xt-tr" style="display: none;">
+                        <div class="xt-td">
+                            <div class="xt-row-buttons">
+                                <a class="aRowActionDrop" href="#"><i class="fa fa-minus"></i></a>
+                                <a class="aRowActionAdd" href="#"><i class="fa fa-plus"></i></a>
+                            </div>
+
+                            <input placeholder="ürün/hizmet" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                        <div class="xt-td">
+                            <input placeholder="----" class="text-center" type="text">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clearfix">
+                <div class="invoice-total">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>TOPLAM</th>
+                            <th class="text-center">₺</th>
+                            <th class="text-center">€</th>
+                        </tr>
+                        <tr>
+                            <td style="width: 190px;">Ara Toplam:</td>
+                            <td>1,235 TL</td>
+                            <td>352.85 EUR</td>
+                        </tr>
+                        <tr>
+                            <td>İndirim:</td>
+                            <td class="color-discount">13 % <i class="fa fa-caret-down" aria-hidden="true"></i></td>
+                            <td class="color-discount">13 % <i class="fa fa-caret-down" aria-hidden="true"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Toplam İndirim:</td>
+                            <td class="color-green">160.55 TL</td>
+                            <td class="color-green">45.87 EUR</td>
+                        </tr>
+                        <tr>
+                            <td>Toplam:</td>
+                            <td>1,074,45 TL</td>
+                            <td>306.98 EUR</td>
+                        </tr>
+                        <tr>
+                            <td>KDV:</td>
+                            <td>193.401 TL</td>
+                            <td>55.25 EUR</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GENEL TOPLAM:</strong></td>
+                            <td><strong>881.049 TL</strong></td>
+                            <td><strong>251.72 EUR</strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <div class="form-group">
+                <label>Notlar</label>
+                <textarea class="form-control" style="height: 118px;"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Etiketler</label>
+                <div class="bootstrap-tagsinput"><span class="tag label label-info">etiket 1<span
+                        data-role="remove"></span></span> <span class="tag label label-info">etiket 2<span
+                        data-role="remove"></span></span> <span class="tag label label-info">a<span
+                        data-role="remove"></span></span> <span class="tag label label-info">b<span
+                        data-role="remove"></span></span> <input placeholder="" type="text"></div>
+                <input class="form-control" data-role="tagsinput" value="etiket 1,etiket 2,a,b" style="display: none;"
+                       type="text">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/modernizr-custom.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
