@@ -1,0 +1,19 @@
+var start = new Date().getTime();
+var str = "I have a cat, a dog, and a goat.";
+var mapObj = {cat:"dog",dog:"goat",goat:"cat"};
+
+function replaceAll(str,mapObj){
+    var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+
+    return str.replace(re, function(matched){
+        return mapObj[matched.toLowerCase()];
+    });
+}
+
+for (i = 0; i < 1000; ++i) {
+  replaceAll(str,mapObj);
+}
+
+var end = new Date().getTime();
+var time = end - start;
+console.log('Execution time: ' + time);

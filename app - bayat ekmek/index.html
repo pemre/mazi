@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bayat Ekmek Tarifleri</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/navbar.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+
+$( document ).ready(function() {
+
+$('.popup-links').on('click', function(e) {
+    var remote = $(this).data('href');
+    $('#genModal .modal-content').load(remote, function(e) {
+        $('#genModal').modal('show');
+    });
+});
+
+	$('.list-tags').on('click', '.like', function(event) {
+	  event.stopPropagation(); // To prevent following the link (optional)
+	  //alert("rkrroro");
+	});
+
+});
+
+
+
+	</script>
+</head>
+<body>
+	<div class="container">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<a class="navbar-brand" href="#">
+			<img alt="Brand" src="images/logo.png" width="30" height="30">
+		</a>
+
+		<form class="navbar-form pull-left" role="search">
+			<div class="input-group">
+				<input type="text" id="tarif-ara" class="form-control" placeholder="Tarif Ara">
+				<div class="input-group-btn">
+					<button id="search-button" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<div class="btn-group pull-right" style="padding:8px 8px 0;" role="group" aria-label="...">
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-tags"></span><!-- <span class="caret"></span>--></a>
+				</button>
+				<ul id="kategori" class="dropdown-menu dropdown-menu-right">
+					<li><a href="#" id="Çorba">
+						<span class="glyphicon glyphicon-chevron-right"></span>&nbsp; Çorbalar</a></li>
+					<li><a href="#" id="Et Yemeği">
+						<span class="glyphicon glyphicon-chevron-right"></span>&nbsp; Et Yemekleri</a></li>
+					<li><a href="#" id="Hamurişi">
+						<span class="glyphicon glyphicon-chevron-right"></span>&nbsp; Hamurişleri</a></li>
+					<li><a href="#" id="Kahvaltı">
+						<span class="glyphicon glyphicon-chevron-right"></span>&nbsp; Kahvaltılıklar</a></li>
+					<li><a href="#" id="Meze">
+						<span class="glyphicon glyphicon-chevron-right"></span>&nbsp; Mezeler</a></li>
+					<li><a href="#" id="Salata">
+						<span class="glyphicon glyphicon-chevron-right"></span>&nbsp; Salatalar</a></li>
+					<li><a href="#" id="Tatlı">
+						<span class="glyphicon glyphicon-chevron-right"></span>&nbsp; Tatlılar</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#" id="Favori">
+						<span class="glyphicon glyphicon-heart"></span>&nbsp; Favoriler</a></li>
+				</ul>
+			</div>
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-menu-hamburger"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right">
+					<li><a data-toggle="modal" data-target="#help" href="#">
+					<span class="glyphicon glyphicon-question-sign"></span>&nbsp; Yardım</a></li>
+					<li><a data-toggle="modal" data-target="#removeAds" href="#">
+					<span class="glyphicon glyphicon-check"></span>&nbsp; Reklamı Kaldır</a></li>
+					<li><a href="#">
+					<span class="glyphicon glyphicon-th-large"></span>&nbsp; Uygulamalar</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#about">
+					<span class="glyphicon glyphicon-info-sign"></span>&nbsp; Hakkında</a></li>
+					<li><a href="#" onclick="navigator.app.exitApp()">
+					<span class="glyphicon glyphicon-log-out"></span>&nbsp; Çıkış</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	  <div class="list-group">
+		<a href="#" class="list-group-item clearfix" data-toggle="modal" data-target="#myModal">
+			<img src="images/recipes/001.jpg" width="50" class="img-rounded" alt="bootstrap" />
+			<strong class="list-title">Peynirli ve Sucuklu Kızarmış Ekmekler</strong>
+			<span class="pull-right list-tags">
+				<button type="button" class="btn btn-info btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-cutlery"></span>
+					<strong>&nbsp;3</strong>
+				</button>
+				<button type="button" class="btn btn-success btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-time"></span>
+					<strong>&nbsp;30′</strong>
+				</button>
+				<button type="button" class="btn btn-xs btn-responsive like">
+					<span class="glyphicon glyphicon-heart"></span>
+				</button>
+			</span>
+		</a>
+
+		<a href="#" class="list-group-item clearfix">
+			<span><img src="images/recipes/002.jpg" width="50" class="img-rounded" alt="bootstrap" /></span>
+			<strong class="list-title">Peynirli Otlu Ekmek Kızartması</strong>
+			<span class="pull-right list-tags">
+				<button type="button" class="btn btn-info btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-cutlery"></span>
+					<strong>&nbsp;4</strong>
+				</button>
+				<button type="button" class="btn btn-success btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-time"></span>
+					<strong>&nbsp;25′</strong>
+				</button>
+				<button type="button" class="btn btn-danger btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-heart"></span>
+				</button>
+			</span>
+		</a>
+
+
+		<a href="#" class="list-group-item clearfix">
+			<span><img src="images/recipes/014.jpg" width="50" class="img-rounded" alt="bootstrap" /></span>
+			<strong class="list-title">Domates Soslu Patlıcan Salatası</strong>
+			<span class="pull-right list-tags">
+				<button type="button" class="btn btn-info btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-cutlery"></span>
+					<strong>&nbsp;4</strong>
+				</button>
+				<button type="button" class="btn btn-success btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-time"></span>
+					<strong>&nbsp;30′</strong>
+				</button>
+				<button type="button" class="btn btn-danger btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-heart"></span>
+				</button>
+			</span>
+		</a>
+
+    <a href="#" class="list-group-item clearfix">
+        <span class="glyphicon glyphicon-file"></span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <span class="pull-right">
+            <button class="btn btn-xs btn-info">CCS</button>
+            <button class="btn btn-xs btn-warning">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+        </span>
+    </a>
+    <a href="#" class="list-group-item clearfix">
+        <span class="glyphicon glyphicon-file"></span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <span class="pull-right">
+            <button class="btn btn-xs btn-info">CCS</button>
+            <button class="btn btn-xs btn-warning">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+        </span>
+    </a>
+
+<a class="popup-links" data-href="views/about.html" href="#">Click me !</a>
+<a class="popup-links" data-href="views/exit.html" href="#">exit</a>
+
+<div class="category-arrow shake text-center"><h4>⬆</h4></div>
+<div class="box-favourite-empty text-center zoom">
+	<h2>Sevdiklerim <span class="glyphicon glyphicon-heart cred"></span></h2>
+	<h4 style="line-height:1.5;font-weight: normal;">Listeniz henüz boş. Hemen menüden <span class="glyphicon glyphicon-tags"></span>&nbsp; simgesine tıklayıp yeni tarifler keşfedin!</h4>
+	<img src="images/logo.big.png">
+</div>
+
+	  </div>
+	</div>
+
+
+<div id="genModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content"></div>
+	</div>
+</div>
+
+<!-- Modal Remove Ads -->
+<div id="removeAds" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div id="modal-image" class="bg-image bg-image-center" style="background-image: url(images/removeads.jpg);">
+				<div class="modal-title-container bg-image">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div id="modal-title" class="modal-title-div modal-title">
+					Reklamları Kaldırın
+					</div>
+				</div>
+			</div>
+			<!--<div class="modal-header"></div>-->
+			<div class="modal-body">
+				<img src="images/price.png" width="64" class="pull-right" />
+				<p>Reklamları kaldırıp bize destek verin.</p>
+				<p>Bayat Ekmekli Tarifler uygulamasının reklamsız sürümünü sadece 3TL'ye Play Store'dan indirebilirsiniz.</p>
+				<div class="text-center">
+					<span class="glyphicon glyphicon-menu-right"></span>
+					<a href="https://play.google.com/store/search?q=pub:df">
+						<img alt="Get it on Google Play" src="images/googleplay.png" />
+					</a>
+					<span class="glyphicon glyphicon-menu-left"></span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+		<div id="modal-image" class="bg-image bg-image-center" style="background-image: url(images/recipes/001.jpg);">
+			<div class="modal-title-container bg-image">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<div id="modal-title" class="modal-title-div modal-title">Peynirli ve Sucuklu Kızarmış Ekmekler</div>
+			</div>
+		</div>
+
+		<div class="modal-list-tags clearfix">
+			<span class="pull-right">
+				<button type="button" class="btn btn-info btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-cutlery"></span>
+					<strong>&nbsp;3</strong>
+				</button>
+				<button type="button" class="btn btn-success btn-xs btn-responsive">
+					<span class="glyphicon glyphicon-time"></span>
+					<strong>&nbsp;30′</strong>
+				</button>
+				<button type="button" class="btn btn-xs btn-responsive" data-toggle="modal" data-target="#myModal2">
+					<span class="glyphicon glyphicon-heart"></span>
+				</button>
+			</span>
+		</div>
+
+      <div class="modal-body">
+
+
+<strong>Malzemeler</strong><br />
+• 6 dilim bayat ekmek<br />
+• 2 adet yumurta<br />
+• 1 su bardağı yoğurt<br />
+• 1 adet soğan<br />
+• 2 yemek kaşığı sıvı yağ<br />
+• 2 yemek kaşığı rendelenmiş kaşar peyniri<br />
+• İnce dilimlenmiş sucuk, salam ve sosis<br />
+• Tuz<br /><br />
+
+<strong>Hazırlanışı</strong><br />
+• Soğanlar piyazlık şekilde doğranır.<br />
+• 2 yemek kaşığı yağ ile sote yapılır.<br />
+• Bir kabın içerisinde yumurta ve yoğurt çırpılır.<br />
+• Kavrulmuş soğan ve rendelenmiş kaşar ilave edilerek, hazırlanan karışım ekmek dilimlerinin üzerine sürülür.<br />
+• İsteğe bağlı olarak ekmeklerin üzerine sosis, salam ve sucuk parçacıkları koyulur.<br />
+• Sadece üst bölümü çalıştırılan fırında, 170 derece sıcaklıkta, ekmekler üzerindeki malzemeler kızarana kadar pişirilir.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal Help -->
+<div id="help" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" style="background-image: url('images/background.jpg');background-repeat: repeat;">
+    <div class="item active">
+      asfadsfas<br><br><br><br>asdfsdf<br><br>sgfssdfsdaf
+      <!-- <img width="100%" src="http://placehold.it/40x40" alt="..."> -->
+      <img src="http://placehold.it/120x120" alt="...">
+      <div class="carousel-caption">
+          <h2>Merhaba!</h2>
+          <h3>Başlamak için sağa kaydır</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img width="100%" src="http://placehold.it/360x640" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <img width="100%" src="http://placehold.it/360x640" alt="...">
+      <div class="carousel-caption">
+          <h3>Caption Text</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

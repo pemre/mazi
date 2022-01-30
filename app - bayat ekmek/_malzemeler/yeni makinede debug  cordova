@@ -1,0 +1,6 @@
+sudo su
+adb devices
+source .profile
+cd "/media/koruncak/Emre/İş/Rencs/Projeler/Bayat Ekmek/kod/hello"
+cordova run android --device
+source .profile

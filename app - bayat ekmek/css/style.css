@@ -1,0 +1,320 @@
+body {
+	background-image: url(../images/back.png);
+	padding-top: 68px;
+}
+
+
+/*************** NAVBAR ******************/
+/* NOT COLLAPSE */
+.navbar-collapse.collapse {
+display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+margin-right: -15px !important;
+}
+
+.navbar-right {
+float: right!important;
+}
+
+.dropdown-menu a span:first-child { padding-right: 0.2em }
+/*************** NAVBAR END ******************/
+
+
+
+@media(min-width: 600px) { /* 600'ü BEN UYDURDUM */
+
+	body {
+		font-size: 200% !important;
+	}
+
+	.btn-responsive {
+		padding:5px 9px;
+		font-size:120%;
+		line-height: 1.2;
+	}
+}
+
+@media(max-width:600px) {
+
+	.navbar .navbar-form {
+        width: 50%;
+		margin: 0 !important;
+		padding: 8px 0 !important;
+		border: 0 !important;
+		float: left;
+    }
+
+	.list-title {
+		vertical-align: top;
+		display: inline-block;
+		width: 75%;
+		font-size: 110% !important;
+	}
+
+	.list-tags {
+	   bottom: 5px !important;
+	   right: 5px !important;
+	}
+}
+
+/* example media query */
+@media only screen and (min-width : 512px) {
+
+	.bg-image { height: 240px; }
+}
+
+@media only screen and (min-width : 1200px) {
+
+	.bg-image { height: 320px; }
+}
+
+/*  */
+h1, h2, h3, h4, h5 {
+	margin-top: 0px;
+	font-weight: bold;
+}
+
+/* LOGO İÇİN */
+.navbar-brand {
+    padding: 10px;
+}
+
+a:focus, button:focus {
+  outline: 0 !important;
+}
+
+.list-group-item {
+    padding: 5px;
+}
+
+.list-title {
+	font-size:120%;
+    padding-left: 5px;
+}
+.list-tags {
+	position: absolute;
+	bottom: 6px;
+	right: 6px;
+}
+
+/* MODAL */
+.modal-title-container {
+	position: relative;
+}
+
+.modal-title-div {
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	padding-right:10px;
+}
+
+.modal-title {
+	font-size: 24px;
+	color: #fff;
+	text-shadow: 0 2px 2px #000;
+	font-weight: bold;
+}
+
+.modal-headers {
+	position: absolute;
+	bottom: 0px;
+	left: 10px;
+	padding-right: 10px;
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+	font-weight: bold;
+}
+
+#modal-author {
+	font-weight: normal;
+	display: inline;
+}
+
+.close {
+	padding: 10px !important;
+	font-size: 40px;
+	line-height: 0.5;
+	color: #fff;
+	opacity: 0.8;
+}
+
+.bg-image {
+	height: 480px;
+	width: 100%;
+}
+
+.bg-image-center {
+	/* lt ie8 */
+	-ms-background-position-x: center;
+	-ms-background-position-y: center;
+	/* default - may override with classes or media query */
+	background-position: center center;
+	/* scale bg image proportionately */
+	background-size: cover;
+	/* ie8 polyfill */
+	-ms-behavior: url(backgroundsize.min.htc);
+	/* prevent scaling past src width (or not) */
+	/* max-width: 1200px; */ }
+
+/***** COLORS *****/
+.cblue   {color: #337AB7;}
+.cgreen  {color: #4CAE4C;}
+.clblue  {color: #46B8DA;}
+.corange {color: #F0AD4E;} /* alternative: #EEA236 */
+.cred    {color: #D43F3A;}
+
+.modal-list-tags {
+	width:100%;
+	padding: 4px;
+	border: 1px solid #E3E3E3;
+	background-color: #efefef;
+}
+
+.dropdown-menu {
+	font-size: 120%;
+	padding: 0;
+}
+
+.dropdown-menu>li>a {
+	padding: 5px 10px 4px 10px;
+}
+
+.dropdown-menu .divider {
+	margin: 0 8px 0 8px;
+}
+
+/* Disable Copy and Paste in Phonegap */
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none; /* Disable selection/copy in UIWebView */
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input {
+	-webkit-user-select: auto !important;
+	-khtml-user-select: auto !important;
+	-moz-user-select: auto !important;
+	-ms-user-select: auto !important;
+	user-select: auto !important;
+}
+/* Disable Copy and Paste in Phonegap */
+
+/* Çok boşluk var, daraltalım */
+ol, ul {
+	padding-left: 2em;
+}
+
+
+/* BOOTSTRAP */
+.glyphicon {
+	top: 2px;
+}
+
+/* modal about */
+.about-logo { margin: 0 0 10px 10px }
+
+/* How can you position the modal vertically in the center
+   when you don't know the exact height of the modal?
+   http://stackoverflow.com/questions/18422223/bootstrap-3-modal-vertical-position-center
+*/
+.modal {
+  text-align: center;
+  padding: 0!important;
+  /* Maybe gives some speed? */
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#modal-body-ingredients { padding-left: 0 }
+#modal-body-ingredients li { list-style: none; margin-bottom: 0.5em }
+#modal-body-ingredients li:before
+{
+    content: "\2003";
+    text-align: center;
+    width: 1em;
+    border: 1px solid gray;
+    margin: 0 8px 0;
+}
+.pur { color:#999 }
+.pur:before { color:#c9302c; content: "\2714" !important }
+
+
+.shake {
+	-webkit-animation: shakew 1s infinite;
+	-moz-animation: shakew 1s infinite;
+	animation: shakew 1s infinite;
+}
+@-webkit-keyframes shakew { 50% { -webkit-transform: translate3d(0, 1em, 0) } }
+@-moz-keyframes shakew    { 50% { -moz-transform: translate3d(0, 1em, 0) } }
+@keyframes shakew         { 50% { transform: translate3d(0, 1em, 0) } }
+
+.category-arrow {
+	position: fixed;
+	top: 60px;
+	right: 60px;
+	width: 20px;
+}
+
+.box-favourite-empty {
+	padding: 5em 2em 0 2em;
+}
+
+.zoom {
+	-webkit-animation: cssAnimation 0.3s 1 ease;
+	-moz-animation: cssAnimation 0.3s 1 ease;
+	animation: cssAnimation 0.3s 1 ease;
+}
+@-webkit-keyframes cssAnimation {
+	from { -webkit-transform: scale(0.5) }
+	to { -webkit-transform: scale(1.0) }
+}
+@-moz-keyframes cssAnimation {
+	from { -moz-transform: scale(0.5) }
+	to { -moz-transform: scale(1.0) }
+}
+@keyframes cssAnimation {
+	from { transform: scale(0.5) }
+	to { transform: scale(1.0) }
+}
+
+
+
+
+@media screen and (min-aspect-ratio: 3/2) {
+	.box-favourite-empty {
+		padding: 1em 2em 0 2em;
+	}
+}
+
+/* Bootstrap fix for Huawei P6 */
+
+.modal-content {
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}

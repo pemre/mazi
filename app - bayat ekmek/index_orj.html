@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src *">
+	<title>Bayat Ekmekli Tarifler</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="js/fastclick.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script><!-- jquery 1.11.3 -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/app.translate.js"></script>
+	<script type="text/javascript" src="js/app.db.js"></script>
+	<script type="text/javascript" src="js/app.db.populate.js"></script>
+</head>
+<body>
+<div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<a class="navbar-brand" href="#" onclick="location.reload()">
+			<img alt="Brand" src="images/logo.png" width="30" height="30">
+		</a>
+
+		<form class="navbar-form pull-left" role="search">
+			<div class="input-group">
+				<input type="text" id="search-text" class="form-control" placeholder="" data-i18n="Search Recipe">
+				<div class="input-group-btn">
+					<button id="search-button" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<div class="btn-group pull-right" style="padding:8px 8px 0;" role="group" aria-label="...">
+			<div class="btn-group" role="group" id="category-group">
+				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-tags"></span></a>
+				</button>
+				<ul id="category" class="dropdown-menu dropdown-menu-right">
+					<li><a href="#" id="soup">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span data-i18n="Soups"></a>
+					</li>
+					<li><a href="#" id="meat">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span data-i18n="Meat Dishes"></span></a>
+					</li>
+					<li><a href="#" id="pastry">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span data-i18n="Pastries"></span></a>
+					</li>
+					<li><a href="#" id="breakfast">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span data-i18n="Breakfast Foods"></span></a>
+					</li>
+					<li><a href="#" id="meze">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span data-i18n="Mezes"></span></a>
+					</li>
+					<li><a href="#" id="salad">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span data-i18n="Salads"></span></a>
+					</li>
+					<li><a href="#" id="dessert">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span data-i18n="Desserts"></span></a>
+					</li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#" id="favourite">
+						<span class="glyphicon glyphicon-heart cred"></span>
+						<span data-i18n="Favourites"></span></a>
+					</li>
+				</ul>
+			</div>
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-menu-hamburger"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right">
+					<li><a href="market://details?id=com.qwertyasd.yourapp">
+						<span class="glyphicon glyphicon-star corange"></span>
+						<span data-i18n="Rate Us"></span></a>
+					</li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#" data-i18n="Send Recipe href" target="_blank">
+						<span class="glyphicon glyphicon-envelope"></span>
+						<span data-i18n="Send Recipe"></span></a>
+					</li>
+					<li role="separator" class="divider"></li>
+					<li><a href="#" data-i18n="Feedback href" target="_blank">
+						<span class="glyphicon glyphicon-comment cgreen"></span>
+						<span data-i18n="Feedback"></span></a></a>
+					</li>
+					<li role="separator" class="divider"></li>
+					<li><a class="popup-links" data-href="ads" href="#">
+						<span class="glyphicon glyphicon-check cred"></span>
+						<span data-i18n="Remove Ads"></span></a>
+					</li>
+					<li role="separator" class="divider"></li>
+					<li><a class="popup-links" data-href="about" href="#">
+						<span class="glyphicon glyphicon-info-sign cblue"></span>
+						<span data-i18n="About"></span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="items" class="list-group"></div>
+
+	<div id="modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
