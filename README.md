@@ -6,6 +6,12 @@
 
 Emre's various scripts, websites, logos, apps bygone...
 
+## Logos
+
+| Name                              | Date       | Description                                 |
+|-----------------------------------|------------|---------------------------------------------|
+| [Fa Yapı](./logo%20-%20fa%20yapi) | 03.07.2017 | The website of Fa Yapı construction company |
+
 ## Pixel art
 
 | Name                                                 | Date       | Description                                                                                                                                                                                         |
