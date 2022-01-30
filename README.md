@@ -20,7 +20,7 @@ Emre's various scripts, websites, logos, apps bygone...
 
 ## Websites
 
-| Name                                                            | Date       | Description                                                                                                                                                                                         |
-|-----------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Çevir](./website_-_cevir/batch-downloader-with-custom-name.sh) | 05.09.2018 | "Aradiginiz metin once Google ile Ingilizce'ye cevrilecek. Metin dili otomatik olarak belirleniyor, Turkce de olabilir Hollandaca da... Ingilizce sonuc ise Tureng'de tekrar Turkce'ye cevrilecek." |
-| [Haberler](./website_-_cevir/creative-escape-room-script.sh)    | 27.03.2017 | An early version of NeHaber. Probably older than 2017, it's the last modified date I could found.                                                                                                   |
+| Name                              | Date       | Description                                                                                                                                                                                         |
+|-----------------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Çevir](./website - cevir/)       | 05.09.2018 | "Aradiginiz metin once Google ile Ingilizce'ye cevrilecek. Metin dili otomatik olarak belirleniyor, Turkce de olabilir Hollandaca da... Ingilizce sonuc ise Tureng'de tekrar Turkce'ye cevrilecek." |
+| [Haberler](./website - haberler/) | 27.03.2017 | An early version of NeHaber. Probably older than 2017, it's the last modified date I could found.                                                                                                   |
