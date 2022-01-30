@@ -20,7 +20,7 @@ Emre's various scripts, websites, logos, apps bygone...
 
 ## Websites
 
-| Name                              | Date       | Description                                                                                                                                                                                         |
-|-----------------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Çevir](./website - cevir/)       | 05.09.2018 | "Aradiginiz metin once Google ile Ingilizce'ye cevrilecek. Metin dili otomatik olarak belirleniyor, Turkce de olabilir Hollandaca da... Ingilizce sonuc ise Tureng'de tekrar Turkce'ye cevrilecek." |
-| [Haberler](./website - haberler/) | 27.03.2017 | An early version of NeHaber. Probably older than 2017, it's the last modified date I could found.                                                                                                   |
+| Name                                  | Date       | Description                                                                                                                                                                                         |
+|---------------------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Çevir](./website%20-%20cevir/)       | 05.09.2018 | "Aradiginiz metin once Google ile Ingilizce'ye cevrilecek. Metin dili otomatik olarak belirleniyor, Turkce de olabilir Hollandaca da... Ingilizce sonuc ise Tureng'de tekrar Turkce'ye cevrilecek." |
+| [Haberler](./website%20-%20haberler/) | 27.03.2017 | An early version of NeHaber. Probably older than 2017, it's the last modified date I could found.                                                                                                   |
