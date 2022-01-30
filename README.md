@@ -26,9 +26,10 @@ Emre's various scripts, websites, logos, apps bygone...
 
 ## Logos
 
-| Name                              | Date       | Description                              |
-|-----------------------------------|------------|------------------------------------------|
-| [Fa Yapı](./logo%20-%20fa%20yapi) | 03.07.2017 | The logo of Fa Yapı construction company |
+| Name                                                        | Date       | Description                                                                                                                                                    |
+|-------------------------------------------------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Datça Naturel Evler](./logo%20-%20datca%20naturel%20evler) | 13.07.2011 | The logo of Datça Naturel Evler touristic bungalows. This is the earliest date I could find on the Wayback Machine. Probably the original asset was way older. |
+| [Fa Yapı](./logo%20-%20fa%20yapi)                           | 03.07.2017 | The logo of Fa Yapı construction company                                                                                                                       |
 
 ## Pixel art
 
