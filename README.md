@@ -6,6 +6,12 @@
 
 Emre's various scripts, websites, logos, apps bygone...
 
+## Pixel art
+
+| Name                                                 | Date       | Description                                                                                                                                                                                         |
+|------------------------------------------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Komutan Kenan](./pixel%20art%20-%20komutan%20kenan) | 09.02.2017 | "İstanbul'un gerçek fatihi Kenan Komutan'ın bir oyunu olsa dedim ve öylesine bir çizim yaptım. Ortaya bu karakter çıktı: ![](./pixel%20art%20-%20komutan%20kenan/pixel_art_komutan_kenan_bg_o.gif)" |
+
 ## Scripts
 
 | Name                                                                                             | Date       | Description                                                                                                                                                |
@@ -25,3 +31,4 @@ Emre's various scripts, websites, logos, apps bygone...
 | [Çevir](./website%20-%20cevir/)                   | 05.09.2018 | "Aradiginiz metin once Google ile Ingilizce'ye cevrilecek. Metin dili otomatik olarak belirleniyor, Turkce de olabilir Hollandaca da... Ingilizce sonuc ise Tureng'de tekrar Turkce'ye cevrilecek." |
 | [Edu Teknoloji](./website%20-%20edu%20teknoloji/) | 25.10.2016 | The website of Edu Teknoloji company: http://eduteknoloji.com.tr/                                                                                                                                   |
 | [Haberler](./website%20-%20haberler/)             | 27.03.2017 | An early version of NeHaber. Probably older than 2017, it's the last modified date I could found.                                                                                                   |
+| [Manşetler](./website%20-%20mansetler/)           | 11.09.2014 | Another early version of NeHaber. Probably older than 2014 (at least 2013), it's the last modified date I could found.                                                                              |

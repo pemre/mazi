@@ -1,0 +1,126 @@
+<!-- Alternatif siteler:
+ * http://www.mynet.com/haber/gazeteler
+ * http://www.gazeteoku.com/gazete-mansetleri
+ * BBC, VOA, rusyanın sesi, bulg, çin
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Haber Oku</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+	<!-- FancyBox -->
+	<link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<!-- Rss Parser -->
+	<script type="text/javascript" language="javascript" src="js/parser.js"></script>
+	<script type="text/javascript" language="javascript" src="js/newspapers.js"></script>
+	<script type="text/javascript" language="javascript" src="js/functions.js"></script>
+	<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+	// PRINT NEWSPAPERS TEMPLATE
+	var newsHTML = [];
+	$.each(newspapers, function(index, val) {
+		newsHTML.push
+		(
+			'<li title="' + val.name + '" data-category="' + val.ctgry + '" data-owner="' + val.owner + '">'+
+				'<a href="' + getNewspaperTempImage(val) + '" rel="gallery1" class="newspaperImage" id="_newspaperImage'+index+'">'+
+					'<img src="' + replaceDate(val.kucuk) + '" class="newsThumb">'+
+				'</a>'+
+				'<span>'+
+					getNewspaperSiteIfExists(val) + ' ' +
+					getNewspaperRssIfExists(val) +
+				'</span>'+
+			'</li>\n'
+		);
+	});
+
+	$("#news").html('<ul>' + newsHTML.join("") + '</ul>');
+
+	// LOAD IMAGES
+	$(".newspaperImage").each(function() {
+		id = this.id.toString().replace('_newspaperImage','');
+		loadImage(newspapers[id], id);
+	});
+
+	// Activate Rss link parsing
+	$(document).on('click', '.rsslink', function() {
+		parseRSS($(this).data("link"), '#rss');
+	});
+
+	$(".rsslink").fancybox( {
+		autoSize : false,
+		width    : "auto",
+		height   : "auto",
+		arrows   : false,
+		mouseWheel : false,
+		openEffect : 'none',
+		closeEffect : 'none',
+		helpers  : {title : null}
+	});
+
+
+	// SORT MENU
+	$('input[type=radio][name=sort]').on('change', function(){
+		switch($(this).val()) {
+				case 'abc'      : break;
+				case 'category' : sortBy('category'); break;
+				case 'owner'    : sortBy('owner'); break;
+		}
+	});
+
+	// Start Fancybox gallery
+	$('.newspaperImage').attr('rel', 'gallery').fancybox( {
+		'fitToView' : false,
+		padding     : 0,
+		openEffect  : 'none',
+		closeEffect : 'none',
+		nextEffect  : 'none',
+		prevEffect  : 'none',
+		mouseWheel  : false
+	});
+
+/*
+	var usefulLinks = [
+		{"name": "Türkiye'deki medya grupları", "link": "http://tr.wikipedia.org/wiki/%C5%9Eablon:T%C3%BCrkiye%27deki_medya_gruplar%C4%B1"},
+		{"name": "198", "link": "M\u0119skie"}
+	];
+	var newHTML = [];
+
+	$.each(usefulLinks, function(index, val) {
+		newHTML.push('<li><a href="' + val.link + '">' + val.name + '</a></li>');
+		//console.log(val.category);
+	});
+
+	$("#usefulLinks").html(newHTML.join(""));
+*/
+
+});
+</script>
+  
+</head>
+<body>
+	<div class="outer-div">
+		<div class="inner-div wrap" id="nav">
+			Sırala: 
+			<input type="radio" name="sort" value="abc">Alfabetik
+			<input type="radio" name="sort" value="owner">Sahibine göre
+			<input type="radio" name="sort" value="category">Türe göre
+
+			<div id="news"></div>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+
+	<ul id="usefulLinks"></ul>
+
+	<div id="temp" style="display:none"></div>
+	<div id="rss" class="feedcontainer" style="display:none"></div>
+</body>
+</html>
