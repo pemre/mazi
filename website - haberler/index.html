@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Haberler</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="nofollow" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- swiper for Sözcü -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <!-- Magnifier for Gazeteler -->
+    <link rel="stylesheet" href="css/magnify.css">
+
+    <style>
+        body {
+            background: #131513;
+            font-family: Arial, sans-serif;
+            color: #eee;
+        }
+        h5 {
+            margin-top: 1rem;
+        }
+        .refresh {
+            cursor: pointer;
+            font-size: 2rem;
+            -webkit-transition: -webkit-transform .8s ease-in-out;
+            transition: transform .8s ease-in-out;
+            width: 30px;
+            height: 30px;
+            display: block;
+            line-height: 30px;
+            margin: 1rem 0 0 1rem;
+            padding: 0;
+            float: left;
+            text-align: center;
+        }
+        .refresh:hover {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        #mansetHurriyet4Box {
+            margin-top: 0.5rem;
+        }
+        #mansetHurriyet4Box a {
+            display: list-item;
+            font-size: 0.75rem;
+            margin-left: 1rem;
+        }
+        #mansetHurriyet4Box .text-type-ribbon {
+            font-size: 0.6rem;
+            margin-right: 0.3rem;
+            color: darkorange;
+        }
+        .site-wrapper {
+            display: table;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+            box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+        }
+        .swiper-container {
+            margin-left: inherit;
+            margin-right: inherit;
+        }
+
+        /* swiper for Sözcü */
+        .swiper-slider.manset-slider {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 60%;
+        }
+        .swiper-slider.manset-slider img {
+            width: 100%;
+        }
+        .swiper-pagination-bullet {
+            min-width: 1.5em;
+            height: 1.5em;
+            text-align: center;
+            line-height: 1.5em;
+            font-size: 1em;
+            font-weight: bold;
+            color: #fff;
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .swiper-pagination-bullet a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #ff4136;
+        }
+        .swiper-pagination-bullet {
+            margin: 0 1px 0 0 !important;
+            border-radius: 25%;
+        }
+
+        /* swiper for OdaTv */
+        .swiper-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 40%;
+        }
+        .swiper-container img {
+            width: 100%;
+            height: 37.24%;
+        }
+
+        /* swiper for Hürriyet */
+        #mansetHurriyet .swiper-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 60%;
+        }
+        #mansetHurriyet .swiper-container img {
+            width: 100%;
+            height: 56.45%;
+        }
+        #mansetHurriyet .swiper-button-next,
+        #mansetHurriyet .swiper-button-prev {
+            display: none;
+        }
+        #mansetHurriyet .swiper-wrapper {
+            /*transform: none !important;*/
+            transition-duration: 300ms !important;
+        }
+
+        /* Haberler */
+        .newspaperCovers ul {
+            list-style: none;
+            padding: 0;
+        }
+        .newspaperCovers li {
+            float: left;
+            width: 12.5em;
+            height: 18.5em;
+        }
+        .newspaperCovers img {
+            width: 11.25em;
+        }
+        .newspaperCovers span {
+            display: none;
+        }
+
+        /* Ekşi Sözlük */
+        #eksiGundem {
+            font-size: 0.7rem;
+        }
+        #eksiGundem ul {
+            padding-left: 1rem;
+        }
+
+        /* rss reader */
+        ul.feedEkList {
+            margin: 0;
+            padding: 0;
+        }
+        .feedEkList {
+            font-size: 0.7rem;
+        }
+        .feedEkList li {
+            padding: 5px 0 5px 0;
+            list-style: none;
+        }
+        .feedEkList li + li {
+            border-top: 1px solid #5e5e5e;
+        }
+		.feedEkList .itemTitle {
+			font-size: 0.85rem;
+		}
+
+        /* borsa */
+        .parite-list li {
+            list-style: none;
+            float: left;
+            height: 66px;
+            text-align: center;
+            width: 20%;
+        }
+        .parite-list li + li { border-left: 1px solid #5e5e5e;  }
+        .parite-list a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .parite-title {
+            display: block;
+        }
+        .parite-value.up {
+            color: #509210;
+        }
+        .parite-value.down {
+            color: #ed1c24;
+        }
+        .parite-value {
+            color: #3da1ee;
+            display: block;
+        }
+        .parite-diff {
+            color: #5b5b5b;
+            display: block;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div id="mansetHurriyetUst">Hürriyet Üst</div>
+            </div>
+            <div class="col-6" style="margin-top: 1rem">
+                <div id="borsa"></div>
+                <div class="refresh" onclick="getNews(); refreshBorsa();" title="Yenile">↻</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h5><img src="img/logo_hurriyet.png" height="30"> Hürriyet</h5>
+                <div id="mansetHurriyet">Hürriyet</div>
+                <div id="mansetHurriyet4Box">Hürriyet 4 Kutu</div>
+                <h5><img src="img/logo_odatv.png" width="36"> OdaTv</h5>
+                <div id="mansetOdaTv">OdaTv</div>
+                <h5><img src="img/logo_sozcu.png" height="30"> Sözcü</h5>
+                <div id="mansetSozcu">Sözcü</div>
+            </div>
+            <div class="col-3">
+                <h5>Ekşi Sözlük</h5>
+                <div id="eksiGundem">Ekşi Sözlük</div><div id="divRss"></div>
+            </div>
+            <div class="col-3">
+                <h5>BBC Türkçe</h5>
+                <div id="rssBBC">BBC Türkçe</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+                <h5>Gazeteler</h5>
+                <div id="gazeteler">Gazeteler</div>
+            </div>
+            <div class="col-3">
+                <h5>CHIP Online</h5>
+                <div id="rssChip"></div>
+                <h5>Hürriyet Teknoloji</h5>
+                <div id="rssHurriyetTeknoloji"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!-- swiper for Sözcü -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+<!-- Magnifier for Gazeteler -->
+<script src="js/jquery.magnify.js"></script>
+<!-- rss reader -->
+<script src="js/FeedEk.js"></script>
+
+<script>
+    $(document).ready(function () {
+        getNews();
+        //setInterval(function(){ refreshBorsa() }, 30000);
+    });
+
+    function getSozcu() {
+        $("#mansetSozcu").load("http://www.sozcu.com.tr #sz_manset", function () {
+            MansetSlider = new Swiper(".manset-slider", {
+                activeIndex: 1,
+                keyboardControl: true,
+                mousewheelControl: true,
+                pagination: '.swiper-pagination',
+                nextButton: ".manset-button-next",
+                prevButton: ".manset-button-prev",
+                paginationClickable: true,
+                paginationBulletRender: function (swiper, index, className) {
+                    var titl = $('#mansetSozcu .swiper-slide').eq(index).find('a').attr('title');
+                    var link = $('#mansetSozcu .swiper-slide').eq(index).find('a').attr('href');
+                    return '<span class="' + className + '">' +
+                        '<a href="' + link + '" target="_blank" title="' + titl + '\n\n' + link + '">' + (index + 1) + '</a>' +
+                        '</span>';
+                }
+            });
+            $(".manset-pagination .swiper-pagination-bullet a").mouseover(function (a) {
+                var b = parseInt(a.currentTarget.innerHTML);
+                MansetSlider.slideTo(b - 1, 300);
+            })
+                .on("click", function (a) {
+                    var b = parseInt(a.currentTarget.innerHTML),
+                        c = $("#sz_manset .swiper-slide:eq(" + (b - 1) + ") > a ");
+                    window.open(c.attr("href"), "_blank");
+                    $(c).trigger("click");
+                });
+        });
+    }
+    function getOdaTv() {
+        $("#mansetOdaTv").load("http://odatv.com/ .hkLeft1", function () {
+
+            $('#mansetOdaTv a').each(function() {
+                var value = $(this).attr('href');
+                $(this).attr('href', 'http://odatv.com/' + value);
+            });
+            $('#mansetOdaTv img').each(function() {
+                var value = $(this).attr('src');
+                $(this).attr('src', 'http://odatv.com/' + value);
+            });
+
+
+            var swiper = new Swiper('#mansetOdaTv .swiper-container', {
+                lazyLoading: true,
+                preloadImages: false,
+                keyboardControl: true,
+                mousewheelControl: true,
+                autoplay: true,
+                spaceBetween: 30,
+                pagination: '#mansetOdaTv .swiper-pagination',
+                paginationClickable: true,
+                keyboardControl: true,
+                paginationBulletRender: function (swiper, index, className) {
+                    if(index==20){
+                        return '<span class="' + className + '"><a href="http://odatv.com/tops.php" target="_blank">★</a></span>';
+                    } else {
+                        var titl = $('#mansetOdaTv .swiper-slide').eq(index).find('img').attr('title');
+                        var link = $('#mansetOdaTv .swiper-slide').eq(index).find('a').attr('href');
+                        return '<span class="' + className + '">' +
+                            '<a href="' + link + '" target="_blank" title="' + titl + '\n\n' + link + '">' + (index + 1) + '</a>' +
+                            '</span>';
+                    }
+                }
+            });
+            $('#mansetOdaTv .swiper-container .swiper-pagination-bullet a').mouseover(function(e){
+                var swi=parseInt(e.currentTarget.innerHTML);
+                if(!swi){
+                    swiper.slideTo(21, 300);
+                }else{
+                    swiper.slideTo(swi-1, 300);
+                }
+            })
+                .on('click', function(e) {
+                    var swi=parseInt(e.currentTarget.innerHTML);
+                    if(!swi){
+                        window.open( 'http://odatv.com/tops.php' , '_blank');
+                        $(swl).trigger('click');
+                    }else{
+                        var swl = $('#mansetOdaTv .swiper-container .swiper-slide:eq('+(swi-1)+') > a ');
+                        window.open(swl.attr('href'), '_blank');
+                        $(swl).trigger('click');
+                    }
+                });
+        });
+    }
+    function getHurriyet() {
+        $("#mansetHurriyet").load("http://www.hurriyet.com.tr div.big-headline-slider:first", function () {
+
+            $('#mansetHurriyet a').each(function() {
+                var value = $(this).attr('href');
+                if (value.substring(0,4) != 'http')
+                    $(this).attr('href', 'http://www.hurriyet.com.tr' + value);
+            });
+            var swiper2 = new Swiper('#mansetHurriyet .swiper-container', {
+                activeIndex: 1,
+                lazyLoading: true,
+                preloadImages: false,
+                keyboardControl: true,
+                mousewheelControl: true,
+                autoplay: false,
+                spaceBetween: 30,
+                pagination: '#mansetHurriyet .swiper-pagination',
+                paginationClickable: true,
+                keyboardControl: true,
+                paginationBulletRender: function (swiper, index, className) {
+                    var titl = $('#mansetHurriyet .swiper-slide').eq(index).find('a').attr('title');
+                    var link = $('#mansetHurriyet .swiper-slide').eq(index).find('a').attr('href');
+                    return '<span class="' + className + '">' +
+                        '<a href="' + link + '" target="_blank" title="' + titl + '\n\n' + link + '">' + (index + 1) + '</a>' +
+                        '</span>';
+                }
+            });
+            $('#mansetHurriyet img').each(function() {
+                var value = $(this).attr('src');
+                if (value.substring(0,4) != 'http')
+                    $(this).attr('src', 'http://' + value);
+            });
+            $('#mansetHurriyet .swiper-pagination-bullet a').mouseover(function(e){
+                var swi=parseInt(e.currentTarget.innerHTML);
+                swiper2.slideTo(swi-1, 300);
+            })
+                .on("click", function (a) {
+                    var b = parseInt(a.currentTarget.innerHTML),
+                        c = $("#mansetHurriyet .swiper-slide:eq(" + (b - 1) + ") > a ");
+                    window.open(c.attr("href"), "_blank");
+                    $(c).trigger("click");
+                });
+        });
+
+        $("#mansetHurriyetUst").load("http://www.hurriyet.com.tr div.subhead-slider:first", function () {
+
+            $('#mansetHurriyetUst a').each(function() {
+                var value = $(this).attr('href');
+                if (value.substring(0,4) != 'http')
+                    $(this).attr('href', 'http://www.hurriyet.com.tr' + value);
+            });
+            var swiperHurriyetUst = new Swiper('#mansetHurriyetUst .swiper-container', {
+                activeIndex: 1,
+                lazyLoading: true,
+                preloadImages: false,
+                keyboardControl: true,
+                mousewheelControl: true,
+                autoplay: false,
+                spaceBetween: 30,
+                pagination: '#mansetHurriyetUst .swiper-pagination',
+                paginationClickable: true,
+                keyboardControl: true,
+                paginationBulletRender: function (swiper, index, className) {
+                    var titl = $('#mansetHurriyetUst .swiper-slide').eq(index).find('a').attr('title');
+                    var link = $('#mansetHurriyetUst .swiper-slide').eq(index).find('a').attr('href');
+                    return '<span class="' + className + '">' +
+                        '<a href="' + link + '" target="_blank" title="' + titl + '\n\n' + link + '">' + (index + 1) + '</a>' +
+                        '</span>';
+                }
+            });
+            $('#mansetHurriyetUst img').each(function() {
+                var value = $(this).attr('src');
+                if (value.substring(0,4) != 'http')
+                    $(this).attr('src', 'http://' + value);
+            });
+            $('#mansetHurriyetUst .swiper-pagination-bullet a').mouseover(function(e){
+                var swi=parseInt(e.currentTarget.innerHTML);
+                swiperHurriyetUst.slideTo(swi-1, 300);
+            })
+                .on("click", function (a) {
+                    var b = parseInt(a.currentTarget.innerHTML),
+                        c = $("#mansetHurriyetUst .swiper-slide:eq(" + (b - 1) + ") > a ");
+                    window.open(c.attr("href"), "_blank");
+                    $(c).trigger("click");
+                });
+        });
+
+        $("#mansetHurriyet4Box").load("http://www.hurriyet.com.tr div.main-content div.row:eq(1)", function () {
+
+            $('#mansetHurriyet4Box img').remove();
+            $('#mansetHurriyet4Box div').removeAttr('class');
+            // text-type-ribbon
+            $('#mansetHurriyet4Box a').each(function() {
+                var value = $(this).attr('href');
+                if (value.substring(0,4) != 'http')
+                    $(this).attr('href', 'http://www.hurriyet.com.tr' + value);
+            });
+
+        });
+
+    }
+    function getGazeteler() {
+        $("#gazeteler").load("http://www.haberler.com/gazeteler/ .newspaperCovers", function () {
+
+            $('#gazeteler a').each(function() {
+                var value = $(this).attr('href');
+                $(this).attr('href', 'http://www.haberler.com/gazete-mansetleri' + value + 'bugun.jpg');
+            });
+            $('#gazeteler img').each(function() {
+                var value = $(this).attr('data-original');
+                $(this).attr('src', value);
+            });
+            $('#gazeteler img').magnify();
+
+        });
+    }
+    function getEksiSozluk() {
+        $("#eksiGundem").load("https://eksisozluk.com/ .topic-list", function () {
+
+            $("#eksiGundem li[id*=sponsored]").remove();
+
+            $('#eksiGundem a').each(function() {
+                $(this).attr('href', 'https://eksisozluk.com' + $(this).attr('href'));
+                $(this).attr('title', $(this).text());
+                // Crop long texts
+                textObj = $(this).contents().first()[0];
+                if (textObj.textContent.length > 46)
+                    textObj.textContent = textObj.textContent.slice(0, -4) + '.. ';
+
+                // rank "2,2b" biçiminde olabiliyor, sayıya çevirelim
+                rankText = $(this).contents().last()[0].textContent;
+                if (rankText.substr(-1) == 'b') {
+                    rankText = rankText.substring(0, rankText.length - 1);
+                    if (rankText.indexOf(',') >= 0)
+                        rankText = rankText.replace(',', '') + "00";
+                    else
+                        rankText += "000";
+                    $(this).contents().last()[0].textContent = rankText;
+                }
+
+                // Give colors
+                rank = Number(rankText);
+                if (rank > 1000)     $(this).css('color', '#ff0000');
+                else if (rank > 500) $(this).css('color', '#ff8000');
+                else if (rank > 300) $(this).css('color', '#ffbf00');
+                else if (rank > 200) $(this).css('color', '#ffff00');
+                else if (rank > 100) $(this).css('color', '#bfff00');
+                else if (rank > 80)  $(this).css('color', '#55ff00');
+                else if (rank > 60)  $(this).css('color', '#00ff55');
+                else if (rank > 40)  $(this).css('color', '#00ffbf');
+                else if (rank > 20)  $(this).css('color', '#00bfff');
+                else if (rank > 10)  $(this).css('color', '#0088bb');
+                else if (rank > 0)   $(this).css('color', '#5599aa');
+            });
+
+            $("#eksiGundem li").sort(sort_li) // sort elements
+                .appendTo('#eksiGundem'); // append again to the list
+            // sort function callback
+            function sort_li(a, b) {
+                na = Number($(a).children().first().children().first().html());
+                nb = Number($(b).children().first().children().first().html());
+                //console.log(na + ' ' + nb);
+                return nb > na ? 1 : -1;
+            }
+        });
+    }
+    function getRssBBC() {
+        $('#rssBBC').FeedEk({
+            FeedUrl : 'http://feeds.bbci.co.uk/turkce/rss.xml',
+            MaxCount : 9,
+            ShowPubDate: false,
+            DescCharacterLimit: 150
+        });
+    }
+    function getRssChip() {
+        $('#rssChip').FeedEk({
+            FeedUrl : 'https://servis.chip.com.tr/chiponline-haber.xml',
+            MaxCount : 6,
+            ShowPubDate: false,
+            DescCharacterLimit: 100
+        });
+    }
+    function getRssHurriyetTeknoloji() {
+        $('#rssHurriyetTeknoloji').FeedEk({
+            FeedUrl : 'http://www.hurriyet.com.tr/rss/teknoloji',
+            MaxCount : 6,
+            //ShowDesc : false,
+            ShowPubDate: false,
+            DescCharacterLimit: 100
+        });
+    }
+    function getBorsa() {
+        $("#borsa").load("http://www.hurriyet.com.tr ul.parite-list", function () {
+            $("#borsa li.ad-logo").remove();
+        });
+    }
+    function getNews() {
+        getSozcu();
+        getOdaTv();
+        getHurriyet();
+        getGazeteler();
+        getEksiSozluk();
+        getRssBBC();
+        getRssChip();
+        getRssHurriyetTeknoloji();
+        getBorsa();
+    }
+    function refreshBorsa() {
+        $.getJSON("http://api.bigpara.hurriyet.com.tr/doviz/headerlist/anasayfa", function(data) {
+            d = data.data;
+            $('#borsa span:contains("BIST")') .next().html(d[1].KAPANIS).next().html('% ' + d[1].YUZDEDEGISIM);
+            $('#borsa span:contains("DOLAR")').next().html(d[6].KAPANIS).next().html('% ' + d[6].YUZDEDEGISIM);
+            $('#borsa span:contains("EURO")') .next().html(d[3].KAPANIS).next().html('% ' + d[3].YUZDEDEGISIM);
+            $('#borsa span:contains("ALTIN")').next().html(d[5].KAPANIS).next().html('% ' + d[5].YUZDEDEGISIM);
+        });
+    }
+</script>
+</body>
+</html>
