@@ -1,0 +1,34 @@
+* Apple telefonlarda uygulamayı yükle önerisini göstermek için gerekli etiket/app-id şu adresten alınabilir: https://linkmaker.itunes.apple.com/en-us
+* Ana sayfa: Sol üstte, carousel'deki resimler 580x280px de olabilir, 29:14 oranını korumak kaydıyla daha büyük veya küçük de olabilir. Ben örnekte 1200x579px resimler kullandım (29:14 oranına sadık kalarak).
+
+
+$(document).ready(function(){
+	function zoom_font(obj){
+		var theElement = $(".text_size").css("font-size");
+		var textSize = parseFloat(theElement, 10);
+		var unitOfMeasurement = theElement.slice(-2);
+		
+
+			if ( (obj).name == "largerTextLink" && textSize < 15){
+				textSize += 2;
+			}
+			
+			if ( (obj).name == "smallerTextLink" && textSize > 11){
+				textSize -=2;
+			};
+	
+		$('.text_size').css("font-size",  textSize + unitOfMeasurement);
+		}
+		
+	$('.font_size_controls a').click(function(){
+		zoom_font(this)
+		return false;
+		
+	});
+	
+	$('.font_size_controls_fisso a').click(function(){
+		zoom_font(this)
+		return false;
+		
+	});
+});
