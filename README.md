@@ -31,6 +31,7 @@ Emre's various scripts, websites, logos, apps bygone...
 | [Datça Naturel Evler](./logo%20-%20datca%20naturel%20evler) | 13.07.2011 | The logo of Datça Naturel Evler touristic bungalows. This is the earliest date I could find on the Wayback Machine. Probably the original asset was way older. |
 | [Fa Yapı](./logo%20-%20fa%20yapi)                           | 03.07.2017 | The logo of Fa Yapı construction company                                                                                                                       |
 | [GC Mühendislik](./logo%20-%20gc%20muhendislik)             | 15.06.2015 | The logo of GC Mühendislik telecommunication company                                                                                                           |
+| [Geylani Mühendislik](./logo%20-%20geylani%20muhendislik)   | 26.05.2015 | The logo of Geylani Mühendislik construction company                                                                                                           |
 | [Ren Creative Solutions](./logo%20-%20rencs)                | 19.03.2012 | The logo of Ren Creative Solutions                                                                                                                             |
 
 ## Pixel art
