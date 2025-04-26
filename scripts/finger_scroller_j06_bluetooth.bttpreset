@@ -1,0 +1,303 @@
+[
+  {
+    "BTTActionCategory" : 0,
+    "BTTLastUpdatedAt" : 1741031628.5258861,
+    "BTTTriggerType" : 630,
+    "BTTTriggerTypeDescriptionReadOnly" : "Group",
+    "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+    "BTTUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+    "BTTPredefinedActionType" : 366,
+    "BTTPredefinedActionName" : "Empty Placeholder",
+    "BTTGroupName" : "Finger scroller settings",
+    "BTTEnabled" : 1,
+    "BTTEnabled2" : 1,
+    "BTTOrder" : 1,
+    "BTTAdditionalActions" : [
+      {
+        "BTTActionCategory" : 0,
+        "BTTLastUpdatedAt" : 1741031625.8062301,
+        "BTTTriggerType" : 763,
+        "BTTTriggerTypeDescriptionReadOnly" : "Generic Device & Input Analyzer",
+        "BTTTriggerTypeDescription" : "Scroller J06",
+        "BTTTriggerParentUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+        "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+        "BTTUUID" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB",
+        "BTTPredefinedActionType" : 366,
+        "BTTPredefinedActionName" : "Empty Placeholder",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 2,
+        "BTTAdditionalActions" : [
+          {
+            "BTTActionCategory" : 0,
+            "BTTLastUpdatedAt" : 1741031140.9836669,
+            "BTTTriggerParentUUID" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB",
+            "BTTIsPureAction" : true,
+            "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+            "BTTUUID" : "2B3A7602-0FC9-426B-9222-185F5A6A6F92",
+            "BTTPredefinedActionType" : 254,
+            "BTTPredefinedActionName" : "Show HUD Overlay",
+            "BTTHUDActionConfiguration" : "{\"BTTActionHUDBlur\":true,\"BTTActionHUDBackground\":\"0.000000, 0.000000, 0.000000, 0.000000\",\"BTTIconConfigImageHeight\":100,\"BTTActionHUDPosition\":0,\"BTTActionHUDDetail\":\"\",\"BTTActionHUDDuration\":0.89999997615814209,\"BTTActionHUDDisplayToUse\":0,\"BTTIconConfigImageWidth\":100,\"BTTActionHUDSlideDirection\":0,\"BTTActionHUDHideWhenOtherHUDAppears\":false,\"BTTActionHUDWidth\":220,\"BTTActionHUDAttributedTitle\":\"{\\\\rtf1\\\\ansi\\\\ansicpg1252\\\\cocoartf2821\\n\\\\cocoatextscaling0\\\\cocoaplatform0{\\\\fonttbl\\\\f0\\\\fswiss\\\\fcharset0 Helvetica-Bold;\\\\f1\\\\fswiss\\\\fcharset0 Helvetica;}\\n{\\\\colortbl;\\\\red255\\\\green255\\\\blue255;\\\\red0\\\\green0\\\\blue0;}\\n{\\\\*\\\\expandedcolortbl;;\\\\cssrgb\\\\c0\\\\c0\\\\c0\\\\c84706\\\\cname labelColor;}\\n\\\\pard\\\\tx560\\\\tx1120\\\\tx1680\\\\tx2240\\\\tx2800\\\\tx3360\\\\tx3920\\\\tx4480\\\\tx5040\\\\tx5600\\\\tx6160\\\\tx6720\\\\pardirnatural\\\\qc\\\\partightenfactor0\\n\\n\\\\f0\\\\b\\\\fs48 \\\\cf2 Finger Scroller\\\\\\n\\\\pard\\\\tx560\\\\tx1120\\\\tx1680\\\\tx2240\\\\tx2800\\\\tx3360\\\\tx3920\\\\tx4480\\\\tx5040\\\\tx5600\\\\tx6160\\\\tx6720\\\\pardirnatural\\\\qc\\\\partightenfactor0\\n\\n\\\\f1\\\\b0 \\\\cf2 Connected}\",\"BTTActionHUDBorderWidth\":0,\"BTTActionHUDTitle\":\"\",\"BTTIconConfigIconType\":2,\"BTTActionHUDHeight\":220}",
+            "BTTEnabled" : 1,
+            "BTTEnabled2" : 1,
+            "BTTOrder" : 11
+          }
+        ],
+        "BTTGenericDeviceConfiguration" : {
+          "BTTGenericDeviceVendorID" : "0x5ac",
+          "BTTGenericDeviceWatchedBytes" : {
+            "1" : [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          "BTTGenericDeviceUsagePair3" : {
+            "BTTGenericDeviceUsagePage" : "0x1",
+            "BTTGenericDeviceUsage" : "0x6"
+          },
+          "BTTGenericDeviceActiveReports" : {
+            "1" : true
+          },
+          "BTTGenericDeviceProvidedTriggers" : "buttonUp\nbuttonDown\nbuttonRight\nbuttonLeft\nbuttonPlay\nbuttonSecond",
+          "BTTGenericDeviceUsagePair2" : {
+            "BTTGenericDeviceUsagePage" : "0xc",
+            "BTTGenericDeviceUsage" : "0x1"
+          },
+          "BTTGenericDeviceProductID" : "0x22c",
+          "BTTGenericDeviceName" : "Scroller J06",
+          "BTTGenericDeviceScript" : "\/\/ Enter your input analyzer script here. \n\/\/ Do not change the function signatures\nfunction analyzeDeviceInput(targetDevice, reportID, reportDataHex) {\n      \n\tlet reportBuffer = buffer.Buffer.from(reportDataHex, 'hex');\n    \/\/ the values you see above are in hex format. To read such a byte\n    \/\/ use readUInt8(index).\n\n    \/\/ BUTTON UP\n    if (reportBuffer.readUInt8(4) === 0xc8) {\n        log('buttonUp clicked!');\n        bttTriggerDeviceTrigger(targetDevice, 'buttonUp');\n\n    \/\/ BUTTON DOWN\n    } else if (reportBuffer.readUInt8(4) === 0x20) {\n        log('buttonDown clicked!');\n        bttTriggerDeviceTrigger(targetDevice, 'buttonDown');\n\n    \/\/ BUTTON RIGHT\n    } else if (\n        reportBuffer.readUInt8(1) === 0x03 &&\n        reportBuffer.readUInt8(2) === 0x64\n    ) {\n        log('buttonRight clicked!');\n        bttTriggerDeviceTrigger(targetDevice, 'buttonRight');\n\n    \/\/ BUTTON LEFT\n    } else if (\n        reportBuffer.readUInt8(1) === 0x00 &&\n        reportBuffer.readUInt8(2) === 0x90\n    ) {\n        log('buttonLeft clicked!');\n        bttTriggerDeviceTrigger(targetDevice, 'buttonLeft');\n\n    \/\/ BUTTON PLAY\/PAUSE\n    } else if (reportBuffer.readUInt8(4) === 0xe0) {\n        log('buttonPlay clicked!');\n        bttTriggerDeviceTrigger(targetDevice, 'buttonPlay');\n\n    \/\/ BUTTON SECOND (II)\n    } else if (reportBuffer.readUInt8(4) === 0x1d) {\n        log('buttonSecond clicked!');\n        bttTriggerDeviceTrigger(targetDevice, 'buttonSecond');\n    }\n\n    \/\/ If you want to get the next report even though,\n    \/\/ the data has not changed, call this function:\n    \/\/ bttGetNextEvenWithoutChange(targetDevice, reportID)\n}\n\n\/\/ Advanced, optional. Use if you want to trigger commands that send data to\n\/\/ the device, from a BTT predefined action.\n\/\/ See https:\/\/docs.folivora.ai\/1500_generic_devices.html\nasync function executeBTTCommand(targetDevice, commandName, commandInput) {\n    log(\"execute command: \" + commandName)\n    switch(commandName) {\n        case \"exampleCommand\": {\n            \/\/ send any hex string to the device\n            let deviceResponse = await bttSendDataToDevice({\n              BTTActionSendDataTargetDevice: targetDevice,\n              BTTActionSendDataData: 'FEEDC0DE',\n              BTTActionSendDataReportType: 1,\n              BTTActionSendDataResponseType: -1,\n              BTTActionSendDataResponsePrefix: ''\n            }); \n            break;\n        }\n    }\n    return 'done executing ' + commandName\n}",
+          "BTTGenericDeviceSelectedTab" : 0,
+          "BTTGenericDeviceDropdownSelection" : {
+            "manufacturer" : "zhuhai_jieli",
+            "product" : "J06",
+            "productID" : 556,
+            "serial" : "000000",
+            "usagePairs" : [
+              {
+                "DeviceUsagePage" : 13,
+                "DeviceUsage" : 1
+              },
+              {
+                "DeviceUsagePage" : 12,
+                "DeviceUsage" : 1
+              },
+              {
+                "DeviceUsagePage" : 1,
+                "DeviceUsage" : 6
+              }
+            ],
+            "vendorID" : 1452
+          },
+          "BTTGenericDeviceUsagePair1" : {
+            "BTTGenericDeviceUsagePage" : "0xd",
+            "BTTGenericDeviceUsage" : "0x1"
+          },
+          "BTTGenericDeviceSeize" : 0
+        },
+        "BTTGestureNotes" : "Scroller J06"
+      },
+      {
+        "BTTActionCategory" : 0,
+        "BTTLastUpdatedAt" : 1741031628.5259361,
+        "BTTTriggerType" : 764,
+        "BTTTriggerTypeDescription" : "Scroller J06: buttonUp",
+        "BTTTriggerParentUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+        "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+        "BTTUUID" : "42273A3E-CC43-48B5-89E5-990228219BFB",
+        "BTTPredefinedActionType" : 366,
+        "BTTPredefinedActionName" : "Empty Placeholder",
+        "BTTAdditionalConfiguration" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB;;buttonUp",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 3,
+        "BTTAdditionalActions" : [
+          {
+            "BTTActionCategory" : 0,
+            "BTTLastUpdatedAt" : 1732229356.4308259,
+            "BTTTriggerParentUUID" : "42273A3E-CC43-48B5-89E5-990228219BFB",
+            "BTTIsPureAction" : true,
+            "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+            "BTTUUID" : "CC8F96E0-667A-483D-A81F-1D27A7079558",
+            "BTTLayoutIndependentActionChar" : "UP",
+            "BTTShortcutToSend" : "126",
+            "BTTEnabled" : 1,
+            "BTTEnabled2" : 1,
+            "BTTOrder" : 13
+          }
+        ],
+        "BTTGestureNotes" : "Scroller J06: buttonUp"
+      },
+      {
+        "BTTActionCategory" : 0,
+        "BTTLastUpdatedAt" : 1741031628.5259252,
+        "BTTTriggerType" : 764,
+        "BTTTriggerTypeDescription" : "Scroller J06: buttonDown",
+        "BTTTriggerParentUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+        "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+        "BTTUUID" : "BBBF8699-618C-43FA-B266-0E055B232DBC",
+        "BTTPredefinedActionType" : 366,
+        "BTTPredefinedActionName" : "Empty Placeholder",
+        "BTTAdditionalConfiguration" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB;;buttonDown",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 4,
+        "BTTAdditionalActions" : [
+          {
+            "BTTActionCategory" : 0,
+            "BTTLastUpdatedAt" : 1732229369.432472,
+            "BTTTriggerParentUUID" : "BBBF8699-618C-43FA-B266-0E055B232DBC",
+            "BTTIsPureAction" : true,
+            "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+            "BTTUUID" : "CD71253F-55E6-433B-B760-32F8C6C04EBD",
+            "BTTLayoutIndependentActionChar" : "DOWN",
+            "BTTShortcutToSend" : "125",
+            "BTTEnabled" : 1,
+            "BTTEnabled2" : 1,
+            "BTTOrder" : 14
+          }
+        ],
+        "BTTGestureNotes" : "Scroller J06: buttonDown"
+      },
+      {
+        "BTTActionCategory" : 0,
+        "BTTLastUpdatedAt" : 1741031628.5259042,
+        "BTTTriggerType" : 764,
+        "BTTTriggerTypeDescription" : "Scroller J06: buttonRight",
+        "BTTTriggerParentUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+        "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+        "BTTUUID" : "B8029663-AAE9-4989-8E06-FC031D902965",
+        "BTTPredefinedActionType" : 366,
+        "BTTPredefinedActionName" : "Empty Placeholder",
+        "BTTAdditionalConfiguration" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB;;buttonRight",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 5,
+        "BTTAdditionalActions" : [
+          {
+            "BTTActionCategory" : 0,
+            "BTTLastUpdatedAt" : 1732228932.935441,
+            "BTTTriggerParentUUID" : "B8029663-AAE9-4989-8E06-FC031D902965",
+            "BTTIsPureAction" : true,
+            "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+            "BTTUUID" : "21C88DB4-13B8-4D87-B285-748B427BDFAB",
+            "BTTLayoutIndependentActionChar" : "RIGHT",
+            "BTTShortcutToSend" : "124",
+            "BTTEnabled" : 1,
+            "BTTEnabled2" : 1,
+            "BTTOrder" : 10
+          }
+        ],
+        "BTTGestureNotes" : "Scroller J06: buttonRight",
+        "BTTTriggerConfig" : {
+          "BTTHUDText" : "hello",
+          "BTTHUDDetailText" : "desc"
+        }
+      },
+      {
+        "BTTActionCategory" : 0,
+        "BTTLastUpdatedAt" : 1741031628.525948,
+        "BTTTriggerType" : 764,
+        "BTTTriggerTypeDescription" : "Scroller J06: buttonLeft",
+        "BTTTriggerParentUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+        "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+        "BTTUUID" : "95AD0651-024A-4AF9-9E72-B4DB891C026A",
+        "BTTPredefinedActionType" : 366,
+        "BTTPredefinedActionName" : "Empty Placeholder",
+        "BTTAdditionalConfiguration" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB;;buttonLeft",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 6,
+        "BTTAdditionalActions" : [
+          {
+            "BTTActionCategory" : 0,
+            "BTTLastUpdatedAt" : 1732229168.160841,
+            "BTTTriggerParentUUID" : "95AD0651-024A-4AF9-9E72-B4DB891C026A",
+            "BTTIsPureAction" : true,
+            "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+            "BTTUUID" : "ADCF1DA9-1513-40AA-9F5B-6DD114E72BDB",
+            "BTTLayoutIndependentActionChar" : "LEFT",
+            "BTTShortcutToSend" : "123",
+            "BTTEnabled" : 1,
+            "BTTEnabled2" : 1,
+            "BTTOrder" : 11
+          }
+        ],
+        "BTTGestureNotes" : "Scroller J06: buttonLeft",
+        "BTTTriggerConfig" : {
+          "BTTHUDText" : "leffo",
+          "BTTHUDDetailText" : "lefffeeeee"
+        }
+      },
+      {
+        "BTTActionCategory" : 0,
+        "BTTLastUpdatedAt" : 1741031628.52596,
+        "BTTTriggerType" : 764,
+        "BTTTriggerTypeDescription" : "Scroller J06: buttonPlay",
+        "BTTTriggerParentUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+        "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+        "BTTUUID" : "95658E81-453E-4ECE-97C9-A7BB15771E69",
+        "BTTPredefinedActionType" : 366,
+        "BTTPredefinedActionName" : "Empty Placeholder",
+        "BTTAdditionalConfiguration" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB;;buttonPlay",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 7,
+        "BTTAdditionalActions" : [
+          {
+            "BTTActionCategory" : 0,
+            "BTTLastUpdatedAt" : 1732229236.8992391,
+            "BTTTriggerParentUUID" : "95658E81-453E-4ECE-97C9-A7BB15771E69",
+            "BTTIsPureAction" : true,
+            "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+            "BTTUUID" : "911FD015-F088-4C16-A531-C64A4997C694",
+            "BTTPredefinedActionType" : 23,
+            "BTTPredefinedActionName" : "Play or Pause",
+            "BTTEnabled" : 1,
+            "BTTEnabled2" : 1,
+            "BTTOrder" : 12
+          }
+        ],
+        "BTTGestureNotes" : "Scroller J06: buttonPlay"
+      },
+      {
+        "BTTActionCategory" : 0,
+        "BTTLastUpdatedAt" : 1741031628.5259151,
+        "BTTTriggerType" : 764,
+        "BTTTriggerTypeDescription" : "Scroller J06: buttonSecond",
+        "BTTTriggerParentUUID" : "85EB5C32-0911-4787-9F52-16DABB3D2241",
+        "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+        "BTTUUID" : "4D54F6CF-C8D2-40ED-A440-003A6D614D4D",
+        "BTTPredefinedActionType" : 366,
+        "BTTPredefinedActionName" : "Empty Placeholder",
+        "BTTAdditionalConfiguration" : "AFD3D6B1-1AAB-4AF5-AA72-F0857F9B30DB;;buttonSecond",
+        "BTTEnabled" : 1,
+        "BTTEnabled2" : 1,
+        "BTTOrder" : 8,
+        "BTTAdditionalActions" : [
+          {
+            "BTTActionCategory" : 0,
+            "BTTLastUpdatedAt" : 1732229420.703512,
+            "BTTTriggerParentUUID" : "4D54F6CF-C8D2-40ED-A440-003A6D614D4D",
+            "BTTIsPureAction" : true,
+            "BTTTriggerClass" : "BTTTriggerTypeGenericDevice",
+            "BTTUUID" : "4DBD8838-E307-4118-B9CC-A31B02D2A8B6",
+            "BTTEnabled" : 1,
+            "BTTEnabled2" : 1,
+            "BTTOrder" : 15
+          }
+        ],
+        "BTTGestureNotes" : "Scroller J06: buttonSecond",
+        "BTTTriggerConfig" : {
+          "BTTHUDText" : "TODO",
+          "BTTHUDDetailText" : "Switch present on click",
+          "BTTShowHUD" : 1
+        }
+      }
+    ],
+    "BTTAdditionalData" : "eyJCVFRJY29uQ29uZmlnSWNvbkhlaWdodCI6MjUsIkJUVEljb25Db25maWdJY29uSWNvbldpZHRoIjoyNX0="
+  }
+]
